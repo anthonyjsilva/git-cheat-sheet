@@ -1,24 +1,28 @@
 # Git Cheat Sheet
 
-### git log
-git log --oneline
+### git log - *See commit history*
 
-<!-- see altered files for commits -->
-git log --stat
+View each commit condensed into one line
+> git log --oneline
 
-<!-- shows full diff of each commit -->
-git log -p
+View altered files for commits
+> git log --stat
 
-<!-- show history of commits for specified file -->
-git log <file>
+View full diff of each commit
+> git log -p
 
-<!-- show difference in commits between two branches -->
-git log --oneline master..some-feature
+View history of commits for specified file
+> git log <file>
 
-<!-- show commits since HEAD diverged from master -->
-git log master...
+View difference in commits between two branches
+> git log --oneline master..some-feature
+
+View commits since HEAD diverged from master
+> git log master...
+
 OR
-git log master...<branch other than HEAD>
+
+> git log master...<branch other than HEAD>
 
 ### git ammend
 git commit --amend --author "Author Name <Author Email>"
