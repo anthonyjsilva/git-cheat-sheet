@@ -22,10 +22,7 @@ View commits since HEAD diverged from master
 
 OR
 
-> git log master...<branch other than HEAD>
-
-### git ammend
-git commit --amend --author "Author Name <Author Email>"
+> git log master...{branch other than HEAD}
 
 
 ### make sure it uses right account
@@ -61,9 +58,11 @@ git push origin :old_branch
 <!-- # Push the new branch, set local branch to track the new remote -->
 git push --set-upstream origin new_branch   
 
+### git commit
 
+git commit --allow-empty
+> make a commit even when your branch has no changes
 
-### git commit amend
  <!-- make changes to a repo and git add -->
 git commit --amend
  <!-- update the existing commit message -->
