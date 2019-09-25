@@ -207,7 +207,6 @@ git push <remote> --all
 git push <remote> --tags
 
 
-
 # git tag
 
 ### show tags
@@ -268,3 +267,7 @@ git config user.name
 ### git abort merge
 git merge --abort
 
+
+## git reflog
+git reflog
+git reset --hard HEAD@{8}
