@@ -3,26 +3,26 @@
 ### git log - *See commit history*
 
 View each commit condensed into one line
-> git log --oneline
+`git log --oneline`
 
 View altered files for commits
-> git log --stat
+`git log --stat`
 
 View full diff of each commit
-> git log -p
+`git log -p`
 
 View history of commits for specified file
-> git log <file>
+`git log <file>`
 
 View difference in commits between two branches
-> git log --oneline master..some-feature
+`git log --oneline master..some-feature`
 
 View commits since HEAD diverged from master
-> git log master...
+`git log master...`
 
 OR
 
-> git log master...{branch other than HEAD}
+`git log master...{branch other than HEAD}`
 
 
 ### make sure it uses right account
