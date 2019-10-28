@@ -1,3 +1,5 @@
+<img src="./git-logo.png" alt="git logo" width="400px"/>
+
 # Git Cheat Sheet
 
 ## Git References
