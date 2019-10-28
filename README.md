@@ -45,7 +45,7 @@ git remote rm
 git remote rename
 git remote prune origin -->
 
-### Git Diff
+## Git Diff
 
 _View file changes made that have not been staged_
 
@@ -53,7 +53,7 @@ _View file changes made that have not been staged_
 - `git diff --stat --color master..branchName`
 - `git diff master..branchName`
 
-### Git Commit
+## Git Commit
 
 _Create file snapshots permanently in version history_
 
@@ -95,7 +95,7 @@ OR
 
 - `git log master...{branch other than HEAD}`
 
-### Delete branch locally and remotely
+## Delete branch locally and remotely
 
 - `git branch -D branch_name`
 - `git push origin :branch_name`
@@ -113,7 +113,7 @@ OR
 
 - `git push --set-upstream origin new_branch`
 
-### default git push
+## default git push
 
 https://www.atlassian.com/git/tutorials/syncing/git-push
 git checkout master
@@ -124,15 +124,15 @@ git rebase -i origin/master
 
 git push origin master
 
-### see what commits have been added to the upstream master
+## see what commits have been added to the upstream master
 
 git log --oneline master..origin/master
 
-### git log remote master
+## git log remote master
 
 git log origin/master
 
-### show git config
+## show git config
 
 git config --list
 
@@ -140,13 +140,13 @@ git config --list
 
 editor = subl -n -w
 
-### git pull behavior
+## git pull behavior
 
 https://stackoverflow.com/questions/19279937/how-do-i-configure-git-to-automatically-pull-from-current-branch-when-using-git
 
 git config --global branch.autoSetupMerge always
 
-### git push behavior
+## git push behavior
 
 https://stackoverflow.com/questions/948354/default-behavior-of-git-push-without-a-branch-specified
 
@@ -184,7 +184,7 @@ https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workf
 
 - Resolve feedback, Merge your pull request
 
-### git rebase
+## git rebase
 
 git pull --rebase origin master
 
@@ -194,24 +194,24 @@ git rebase --abort
 
 git push --set-upstream origin branchname
 
-### git reset remote
+## git reset remote
 
 git checkout master
 git reset --hard e3f1e37
 git push --force origin master
 
-### git merge local branches
+## git merge local branches
 
 on branch-A: git merge `branch-B`
 on branch-A: git merge --squash `branch-B`
 
-### git rename local and remote branch
+## git rename local and remote branch
 
 git branch -m new-name
 git push origin --delete the_remote_branch
 git push origin new_name
 
-### git reset
+## git reset
 
 ☐ 1) UNDO local file changes but NOT REMOVE your last commit
 git reset --hard
@@ -222,14 +222,14 @@ git reset --hard HEAD^
 ☐ 3) KEEP local file changes and REMOVE ONLY your last commit
 git reset --soft HEAD^
 
-### git stash
+## git stash
 
 git stash list
 git stash show
 git stash show -p
 git stash show -p stash@{1}
 
-### git push
+## git push
 
 https://www.atlassian.com/git/tutorials/syncing/git-push
 git push <remote> <branch>
@@ -252,7 +252,7 @@ _Force push to overrid any version history differences between local and remote_
 
 # git tag
 
-### show tags
+## show tags
 
 git tag
 
@@ -261,12 +261,12 @@ git tag --sort="-refname"
 
 `show all tags and their message`
 
-### add tag
+## add tag
 
 git tag -a 1.0.0 -m "new component"
 git tag -a 2.20.3 -m "putting the v in Version!"
 
-### push tags to remote
+## push tags to remote
 
 git push origin <tag>
 git push --tags
@@ -274,15 +274,15 @@ git push --tags
 `safer alternative to --tags`
 git push --follow-tags
 
-### delete remote tag:
+## delete remote tag:
 
 git push --delete origin 1.4.0
 
-### delete local tag:
+## delete local tag:
 
 git tag --delete 1.4.0
 
-### both
+## both
 
 git tag --delete 1.4.0;git push --delete origin 1.4.0
 
@@ -291,12 +291,12 @@ git push -d <remote_name> <branch_name>
 delete local branch
 git branch -d <branch_name>
 
-### Setting your branch to exactly match the remote branch
+## Setting your branch to exactly match the remote branch
 
 git fetch origin
 git reset --hard origin/master
 
-### git abort merge
+## git abort merge
 
 git merge --abort
 
