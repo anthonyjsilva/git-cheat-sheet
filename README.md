@@ -1,6 +1,6 @@
 # Git Cheat Sheet
 
-## References
+## Git References
 
 https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf
 
@@ -12,7 +12,60 @@ https://gist.github.com/carlessanagustin/31c654b502e1fce23afb
 
 https://gist.github.com/davfre/8313299
 
-### git log - _See commit history_
+## Git Configuration
+
+_Configure user information_
+
+Set your username for every git repository on your computer
+
+- `git config --global user.name`
+
+Set your username for the current git repository
+
+- `git config user.name`
+
+## Git Remote
+
+_View and modify what remote repository this repository is linked to_
+
+View the name of your remote repos
+
+- `git remote`
+
+View the exact urls of your remote repos
+
+- `git remote -v`
+
+Update a url on one of your remote repos
+
+- `git remote set-url origin`
+
+<!-- git remote add
+git remote rm
+git remote rename
+git remote prune origin -->
+
+### Git Diff
+
+_View file changes made that have not been staged_
+
+- `git diff`
+- `git diff --stat --color master..branchName`
+- `git diff master..branchName`
+
+### Git Commit
+
+_Create file snapshots permanently in version history_
+
+Make a commit even when your branch has no changes
+
+- `git commit --allow-empty`
+
+Update the existing commit message
+
+- `git commit --amend`
+
+## git log - _See commit history_
 
 View each commit condensed into one line
 
@@ -59,19 +112,6 @@ OR
 <!-- # Push the new branch, set local branch to track the new remote -->
 
 - `git push --set-upstream origin new_branch`
-
-### Git commit
-
-- `git commit --allow-empty`
-  <!-- make a commit even when your branch has no changes -->
-
-<!-- make changes to a repo and git add -->
-
-- `git commit --amend`
-
-<!-- update the existing commit message -->
-
-- `git push --force origin master`
 
 ### default git push
 
@@ -144,16 +184,6 @@ https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workf
 
 - Resolve feedback, Merge your pull request
 
-### git remote
-
-git remote
-gite remote -v
-git remote add
-git remote rm
-git remote rename
-
-git remote prune origin
-
 ### git rebase
 
 git pull --rebase origin master
@@ -192,11 +222,6 @@ git reset --hard HEAD^
 ☐ 3) KEEP local file changes and REMOVE ONLY your last commit
 git reset --soft HEAD^
 
-### git diff
-
-git diff --stat --color master..branchName
-git diff master..branchName
-
 ### git stash
 
 git stash list
@@ -220,6 +245,10 @@ git push <remote> --all
 <!-- push tags as well -->
 
 git push <remote> --tags
+
+_Force push to overrid any version history differences between local and remote_
+
+- `git push --force origin master`
 
 # git tag
 
@@ -262,25 +291,10 @@ git push -d <remote_name> <branch_name>
 delete local branch
 git branch -d <branch_name>
 
-### remote
-
-git remote
-git remote -v
-
-git remote set-url origin
-
 ### Setting your branch to exactly match the remote branch
 
 git fetch origin
 git reset --hard origin/master
-
-### config
-
-set git username for every repo on your comp
-git config --global user.name
-
-set git username for a single repo
-git config user.name
 
 ### git abort merge
 
