@@ -1,51 +1,59 @@
-<img src="./git-logo.png" alt="git logo" width="400px"/>
+<img src="./git-logo.png" alt="git logo" width="200px"/>
 
 # Git Cheat Sheet
 
-## Git References
+A simplified summary of some of the most important git commands.
 
-https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf
+> _💪 Git good at git! 💪_
 
-https://www.git-tower.com/blog/git-cheat-sheet
+## Profile
 
-https://gist.github.com/hofmannsven/6814451
+_Configure your git profile_
 
-https://gist.github.com/carlessanagustin/31c654b502e1fce23afb
+Set your username / email for every git repo (repository) on your computer
 
-https://gist.github.com/davfre/8313299
+- `git config --global user.name yourName`
+- `git config --global user.email yourEmail`
 
-## Git Configuration
+Set your username / email only for the current git repo
 
-_Configure user information_
+- `git config user.name yourName`
+- `git config user.name yourEmail`
 
-Set your username for every git repository on your computer
+See your git config
 
-- `git config --global user.name`
+- `git config --list`
 
-Set your username for the current git repository
+<!-- set editor as sublime -->
+<!-- editor = subl -n -w -->
 
-- `git config user.name`
+## Setup
 
-## Git Remote
+_First time setup stuff_
 
-_View and modify what remote repository this repository is linked to_
+Setup the current directory to be a git repo
 
-View the name of your remote repos
+- `git init`
+
+Download an existing repo, including all of the files, branches, and commits
+
+- `git clone repoURL`
+
+## Remote
+
+_View and / or change what remote repo the current local repo is connected to_
+
+See the names of your connected remote repos
 
 - `git remote`
 
-View the exact urls of your remote repos
+See the names and exact URLs of your connected remote repos
 
 - `git remote -v`
 
-Update a url on one of your remote repos
+Change a URL of one of your connected remote repos
 
-- `git remote set-url origin`
-
-<!-- git remote add
-git remote rm
-git remote rename
-git remote prune origin -->
+- `git remote set-url origin newRepoURL`
 
 ## Git Diff
 
@@ -103,15 +111,15 @@ OR
 - `git push origin :branch_name`
 - `git push origin --delete feature/login`
 
-<!-- # Rename branch locally     -->
+Rename branch locally
 
 - `git branch -m old_branch new_branch`
 
-<!-- # Delete the old branch     -->
+Delete the old branch
 
 - `git push origin :old_branch`
 
-<!-- # Push the new branch, set local branch to track the new remote -->
+Push the new branch, set local branch to track the new remote
 
 - `git push --set-upstream origin new_branch`
 
@@ -133,14 +141,6 @@ git log --oneline master..origin/master
 ## git log remote master
 
 git log origin/master
-
-## show git config
-
-git config --list
-
-<!-- set editor as sublime -->
-
-editor = subl -n -w
 
 ## git pull behavior
 
@@ -188,41 +188,44 @@ https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workf
 
 ## git rebase
 
-git pull --rebase origin master
+- `git pull --rebase origin master`
 
-git add file
-git rebase --continue
-git rebase --abort
+- `git add file`
+- `git rebase --continue`
+- `git rebase --abort`
 
-git push --set-upstream origin branchname
+- `git push --set-upstream origin branchname`
 
 ## git reset remote
 
-git checkout master
-git reset --hard e3f1e37
-git push --force origin master
+- `git checkout master`
+- `git reset --hard e3f1e37`
+- `git push --force origin master`
 
 ## git merge local branches
 
-on branch-A: git merge `branch-B`
-on branch-A: git merge --squash `branch-B`
+on branch-A:
+- `git merge branch-B`
+
+on branch-A:
+- `git merge --squash branch-B`
 
 ## git rename local and remote branch
 
-git branch -m new-name
-git push origin --delete the_remote_branch
-git push origin new_name
+- `git branch -m new-name`
+- `git push origin --delete the_remote_branch`
+- `git push origin new_name`
 
 ## git reset
 
-☐ 1) UNDO local file changes but NOT REMOVE your last commit
-git reset --hard
+1) UNDO local file changes but NOT REMOVE your last commit
+- `git reset --hard`
 
-☐ 2) UNDO local file changes AND REMOVE your last commit
-git reset --hard HEAD^
+2) UNDO local file changes AND REMOVE your last commit
+- `git reset --hard HEAD^`
 
-☐ 3) KEEP local file changes and REMOVE ONLY your last commit
-git reset --soft HEAD^
+3) KEEP local file changes and REMOVE ONLY your last commit
+- `git reset --soft HEAD^`
 
 ## git stash
 
@@ -252,46 +255,45 @@ _Force push to overrid any version history differences between local and remote_
 
 - `git push --force origin master`
 
-# git tag
+## git tag
 
-## show tags
+show tags
 
-git tag
+- `git tag`
 
-`show tags sorted in reverse order`
-git tag --sort="-refname"
+add tag
 
-`show all tags and their message`
+- `git tag -a 1.0.0 -m "new component"`
+- `git tag -a 2.20.3 -m "putting the v in Version!"`
 
-## add tag
+push tags to remote
 
-git tag -a 1.0.0 -m "new component"
-git tag -a 2.20.3 -m "putting the v in Version!"
+- `git push origin <tag>`
+- `git push --tags`
 
-## push tags to remote
+safer alternative to --tags
 
-git push origin <tag>
-git push --tags
+- `git push --follow-tags`
 
-`safer alternative to --tags`
-git push --follow-tags
+delete remote tag
 
-## delete remote tag:
+- `git push --delete origin 1.4.0`
 
-git push --delete origin 1.4.0
+delete local tag:
 
-## delete local tag:
+- `git tag --delete 1.4.0`
 
-git tag --delete 1.4.0
+both
 
-## both
-
-git tag --delete 1.4.0;git push --delete origin 1.4.0
+- `git tag --delete 1.4.0;git push --delete origin 1.4.0`
 
 delete remote branch
-git push -d <remote_name> <branch_name>
+
+- `git push -d <remote_name> <branch_name>`
+
 delete local branch
-git branch -d <branch_name>
+
+- `git branch -d <branch_name>`
 
 ## Setting your branch to exactly match the remote branch
 
@@ -302,7 +304,15 @@ git reset --hard origin/master
 
 git merge --abort
 
-## git reflog
 
-git reflog
-git reset --hard HEAD@{8}
+## References
+
+https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf
+
+https://www.git-tower.com/blog/git-cheat-sheet
+
+https://gist.github.com/hofmannsven/6814451
+
+https://gist.github.com/carlessanagustin/31c654b502e1fce23afb
+
+https://gist.github.com/davfre/8313299
